@@ -4,6 +4,15 @@ import "./css/styles.css";
 
 function App(){
 const [Fact, setFact] = useState("");
+
+if(!isDataLoaded){
+    return(
+      <div>
+        <h1> Loading... </h1>
+      </div>
+    )
+}
+
 const fetchFact = () => {
   fetch("https://api.chucknorris.io/jokes/random").then((res) => res.json())
   .then((data) => {
